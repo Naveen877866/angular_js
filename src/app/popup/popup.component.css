@@ -1,0 +1,7 @@
+.cdk-overlay-pane.mat-mdc-dialog-panel {
+    width: 80% !important;
+}
+
+.mat-mdc-dialog-inner-container {
+    align-items: center;
+}

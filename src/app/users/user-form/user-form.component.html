@@ -1,0 +1,49 @@
+<div class="row justify-content-center m-0">
+    <div class="p-5 w-50">
+        @if(editUserId){
+        <h2 class="text-xl font-semibold">Update User</h2>
+        }
+        @else{
+        <h2 class="text-xl font-semibold">Add User</h2>
+        }
+        <form [formGroup]="userForm">
+            <!-- <label for="value">Value</label>
+            <input type="text" id="value" formControlName="navee" /><button type="submit"
+                (click)="onSubmit()">Submit</button> -->
+
+            <div class="row justify-content-end">
+                <mat-form-field class="w-full mb-3">
+                    <mat-label>Name</mat-label>
+                    <input type="text" matInput formControlName="name" />
+                </mat-form-field>
+                <mat-form-field class="w-full mb-3">
+                    <mat-label>Email</mat-label>
+                    <input type="text" matInput formControlName="email" />
+                </mat-form-field>
+                <mat-form-field class="w-full mb-3">
+                    <mat-label>Age</mat-label>
+                    <input type="number" matInput formControlName="age" />
+                </mat-form-field>
+                <mat-form-field class="w-full mb-3">
+                    <mat-label>Address</mat-label>
+                    <input type="text" matInput formControlName="address" />
+                </mat-form-field>
+                <mat-form-field class="w-full mb-3">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput formControlName="password" />
+                </mat-form-field>
+                <mat-form-field class="w-full mb-3">
+                    <mat-label>Link</mat-label>
+                    <input type="text" matInput formControlName="link" />
+                </mat-form-field>
+                @if(editUserId){
+                <button mat-raised-button color="primary col-3" (click)="updateUser()">Update User</button>
+                }
+                @else{
+                <button mat-raised-button color="primary col-3" (click)="addUser()">Add User</button>
+                }
+
+            </div>
+        </form>
+    </div>
+</div>

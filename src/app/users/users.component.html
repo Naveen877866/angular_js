@@ -1,0 +1,38 @@
+<div class="p-5">
+    <div class="d-flex justify-content-between align-items-center mb-5">
+        <h2 class="text-xl font-semibold m-0">
+            Users Data
+        </h2>
+        <button mat-raised-button color="primary" routerLink="/users/add">Add User</button>
+    </div>
+    <table class="w-full">
+        <thead class="w-full">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Address</th>
+                <th>Link</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody class="w-full">
+            @for (user of users; track $index){
+            <tr>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.age}}</td>
+                <td>{{user.address}}</td>
+                <td (click)="openPopup(user.link)"><qr-code value="www" size="50" errorCorrectionLevel="M"></qr-code>
+                </td>
+                <td>
+                    <button mat-raised-button class="m-2" color="accent" [routerLink]="'/users/'
+                    +user._id">Edit</button>
+                    <button mat-raised-button color="warm" (click)="delete(user._id!)">Delete</button>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<!-- <button mat-raised-button color="primary" (click)="openPopup()">Open Popup</button> -->
